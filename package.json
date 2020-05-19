@@ -6,6 +6,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.1.0",
     "cors": "^2.8.5",
@@ -20,12 +21,10 @@
     "nodemon": "^2.0.3"
   },
   "scripts": {
-    "start": "node app.js",
-     "client": "cd client && yarn start",
     "server": "nodemon app.js",
     "heroku-postbuild": "cd client && yarn && yarn build"
   },
   "engines": {
     "node": "12.9.1"
-  } 
+  }
 }

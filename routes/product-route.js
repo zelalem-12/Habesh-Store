@@ -41,8 +41,7 @@ router.post('/', isAuthenticated, isAdmin, asyncHandler(async (req, res) => {
     countInStock: req.body.countInStock,
     imageUrl: req.body.imageUrl,
     category: req.body.category,
-    brand: req.body.brand,
-    // features: req.body.features,
+    subCategory: req.body.subCategory,
   });
   const newProduct = await product.save();
   res.send({ message: 'Product Created', data: newProduct });

@@ -69,7 +69,7 @@ app.use('/products', express.static(products));
 
 app.use(fileUpload());
 app.post('/products', (req, res) => {
-  // console.log(req.files);
+  log(req.files);
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }

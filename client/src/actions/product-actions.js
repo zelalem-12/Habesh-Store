@@ -25,7 +25,7 @@ import { getErrorMessage } from '../utils';
 const listProducts = (category = '', search = '') => async (dispatch) => {
     dispatch({type: PRODUCT_LIST_REQUEST});
     try{
-        const result =  await axios.get(`http://localhost:8000/api/products?category=${category}&search=${search}`);
+        const result =  await axios.get(`/api/products?category=${category}&search=${search}`);
         dispatch({type: PRODUCT_LIST_SUCCESS, payload: result.data})
     }catch(error){
         dispatch({type: PRODUCT_LIST_FAIL, payload: getErrorMessage(error)})
@@ -35,7 +35,7 @@ const listProducts = (category = '', search = '') => async (dispatch) => {
 const listProductCategories = () => async (dispatch) => {
     dispatch({type: PRODUCT_CATEGORY_LIST_REQUEST});
     try{
-        const result = await axios.get('http://localhost:8000/api/products/categories');
+        const result = await axios.get('/api/products/categories');
         dispatch({type: PRODUCT_CATEGORY_LIST_SUCCESS, payload: result.data})
     }catch(error){
         dispatch({type: PRODUCT_CATEGORY_LIST_FAIL, payload: getErrorMessage(error)})
@@ -45,7 +45,7 @@ const listProductCategories = () => async (dispatch) => {
 const detailsProduct = product_id => async (dispatch) => {
     dispatch({type: PRODUCT_DETAILS_REQUEST});
     try{
-        const result = await axios.get(`http://localhost:8000/api/products/${product_id}`);
+        const result = await axios.get(`/api/products/${product_id}`);
         dispatch({type: PRODUCT_DETAILS_SUCCESS, payload: result.data});
     } catch(error){
         dispatch({type: PRODUCT_DETAILS_FAIL, payload: getErrorMessage(error)})
@@ -56,7 +56,7 @@ const addProductReview = (product_id, review) => async (dispatch, getState) => {
     dispatch({type: PRODUCT_ADD_REVIEW_REQUEST, payload: review});
     try{
         const { loggedUser: { user: { token } } } = getState();
-        const { data: savedReview } = await axios.post(`http://localhost:8000/api/products/${product_id}/reviews`, review, {
+        const { data: savedReview } = await axios.post(`/api/products/${product_id}/reviews`, review, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -72,14 +72,14 @@ const addProduct = product => async (dispatch, getState) => {
     try{
         const { loggedUser: { user: { token } } } = getState();
         if (product._id) {
-        const { data: savedProduct } = await axios.put(`http://localhost:8000/api/products/${product._id}`, product, {
+        const { data: savedProduct } = await axios.put(`/api/products/${product._id}`, product, {
         headers: {
                 Authorization: `Bearer ${token}`,
               },
             });
       dispatch({type:PRODUCT_ADD_SUCCESS, payload: savedProduct});
     } else{
-        const { data: savedProduct } = await axios.post('http://localhost:8000/api/products', product, {
+        const { data: savedProduct } = await axios.post('/api/products', product, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -95,7 +95,7 @@ const deleteProduct = productId => async (dispatch, getState) => {
     try{
         console.log(productId);
         const { loggedUser: {user: { token }}} = getState();
-        const { data: deleteProduct } = await axios.delete(`http://localhost:8000/api/products/${productId}`, {
+        const { data: deleteProduct } = await axios.delete(`/api/products/${productId}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

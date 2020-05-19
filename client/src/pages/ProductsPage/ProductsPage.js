@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import MUIDataTable from 'mui-datatables';
 import { LoadingBox, ErrorBox, CustomButton, SuccessBox, FormInput} from '../../components';
 import { listProducts, deleteProduct, addProduct } from '../../actions/product-actions';
 import styles from './ProductsPage.module.css';
@@ -12,7 +11,7 @@ const  ProductsPage = props => {
   const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [brand, setBrand] = useState('');
+  const [subCategory, setSubCategory] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [price, setPrice] = useState(0);
   const [category, setCategory] = useState('');
@@ -21,7 +20,7 @@ const  ProductsPage = props => {
     setId(product._id);
     setName(product.name);
     setDescription(product.description);
-    setBrand(product.brand);
+    setSubCategory(product.brand);
     setImageUrl(product.imageUrl);
     setPrice(product.price);
     setCategory(product.category);
@@ -41,14 +40,14 @@ const  ProductsPage = props => {
         setImageUrl(response.data);
       })
       .catch(response => {
-        alert('Unable to ppload product image');
+        alert('Unable to upload product image');
       });
   };
  
   const submitHandler = e => {
     e.preventDefault();
     dispatch(addProduct({
-      _id: id, name, brand, imageUrl, price, category, countInStock, description,
+      _id: id, name, subCategory, imageUrl, price, category, countInStock, description,
     }));
   };
   const productList = useSelector(state => state.productList);
@@ -119,7 +118,7 @@ const  ProductsPage = props => {
                       </div>
                       <span className={styles.name}>{product.name}</span>
                       <span className={styles.price}>$ {product.price}</span>
-                      <span className={styles.category}>{product.category}</span>
+                      <span className={styles.category}>{product.category}>{product.subCategory}</span>
                       <div className={styles.update_button}
                         onClick={() => showModal(product)}>
                           edit
@@ -153,14 +152,6 @@ const  ProductsPage = props => {
                   label='Name'
                   required
               />
-                <FormInput
-                  type='text'
-                  name='brand' 
-                  value={brand}
-                  handleChange = {e => setBrand(e.target.value)}
-                  label='Brand'
-                  required
-              />
                <FormInput
                   type='text'
                   id='imageUrl' 
@@ -190,6 +181,14 @@ const  ProductsPage = props => {
                   value={category}
                   handleChange = {e => setCategory(e.target.value)}
                   label='Category'
+                  required
+              />
+              <FormInput
+                  type='text'
+                  name='subCategory' 
+                  value={subCategory}
+                  handleChange = {e => setSubCategory(e.target.value)}
+                  label='Sub category'
                   required
               />
              <FormInput

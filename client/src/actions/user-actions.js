@@ -17,7 +17,7 @@ import {
 const signin = (email, password) => async (dispatch) => {
     try{
     dispatch({type: USER_SIGNIN_REQUEST});
-    const result = await axios.post('http://localhost:8000/api/users/signin', {email, password});
+    const result = await axios.post('/api/users/signin', {email, password});
     dispatch({type: USER_SIGNIN_SUCCESS, payload: result.data});
     Cookies.set('user', JSON.stringify(result.data));
 } catch (error) {
@@ -36,7 +36,7 @@ const register = ( first_name, last_name, email, password, confirm_password ) =>
         if(password !== confirm_password){
             dispatch({type: USER_REGISTER_FAIL, payload: 'Password Mismatch'});
          }
-    const result = await axios.post('http://localhost:8000/api/users/register', {first_name, last_name, email, password});
+    const result = await axios.post('/api/users/register', {first_name, last_name, email, password});
     dispatch({type: USER_REGISTER_SUCCESS, payload: result.data});
     Cookies.set(JSON.stringify(result.data))
     }catch (error){
@@ -47,7 +47,7 @@ const update = (userId, first_name, last_name, email, password ) => async (dispa
     try{
         dispatch({type: USER_UPDATE_REQUEST});
         const {loggedUser: { user: {token}}} = getState();
-        const  result = await axios.put(`http://localhost:8000/api/users/${userId}`, {first_name, last_name, email, password}, {
+        const  result = await axios.put(`/api/users/${userId}`, {first_name, last_name, email, password}, {
             headers: {
                 Authorization: `Bearer ${token}`, 
             }
