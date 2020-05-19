@@ -17,7 +17,8 @@ const  config = require('./config');
 const log = console.log;
 
 // static files 
-const products = path.join(__dirname, '/client/public/products');
+const products = path.join(__dirname, 'client','public','products');
+log(products);
 
 dotenv.config();
 
@@ -69,7 +70,7 @@ app.use('/products', express.static(products));
 
 app.use(fileUpload());
 app.post('/products', (req, res) => {
-  log(req.files);
+  // console.log(req.files);
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
