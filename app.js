@@ -18,7 +18,6 @@ const log = console.log;
 
 // static files 
 const products = path.join(__dirname, 'client','public','products');
-log(products);
 
 dotenv.config();
 
