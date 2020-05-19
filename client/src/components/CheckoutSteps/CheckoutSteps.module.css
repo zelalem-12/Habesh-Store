@@ -1,0 +1,17 @@
+.checkout_steps {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 1.0rem;
+  }
+   .steps{
+    border-top: 2px solid #c0c0c0;
+    color: #c0c0c0;
+    flex: 1 1;
+    padding-top: 1rem;
+  }
+  .active {
+    border-top: 3px solid #f08000;
+    color: #f08000;
+  }

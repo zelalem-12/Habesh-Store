@@ -1,0 +1,25 @@
+.shipping{
+    width: 30%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    padding: 3rem 1rem;
+    border-radius: 0.5rem;
+    border: solid 1px #cccccc;
+  }
+  .form{
+    margin-bottom: 10px;
+  } 
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    }
+  
+  .span{
+    font-size: 200%;
+    text-transform: capitalize;
+    font-weight: 800;
+  }
+    

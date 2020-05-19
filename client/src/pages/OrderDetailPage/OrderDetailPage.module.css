@@ -1,0 +1,109 @@
+.placeorder {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .review_order {
+    margin-left: 2rem;
+  }
+  .placeorder_info {
+    border: none;
+    width: 75%;
+  }
+  .placeorder_actions{
+    border: 1px #c0c0c0 solid;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #fcfcfc;
+  }
+  .placeorder_actions > ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .placeorder_actions > ul > li {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .placeorder_actions > ul > li:first-child { 
+    display: flex;
+    flex-direction: column;
+  }
+  .placeorder_actions > ul > li:last-child {
+    color: #c04000;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  .placeorder_info > div {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #fcfcfc;
+  }
+  .placeorder_actions > ul > li>div {
+    width: 100%;
+  }
+  .order_items{
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #ffffff;
+  }
+  .product_header {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgrey;
+  }
+    .header_block {
+      text-transform: capitalize;
+      width: 15%;
+      font-weight: 900;
+    }
+    .header_block:last-child {
+      width: 8%;
+    }
+  
+    .product_item {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      border-bottom: 1px solid darkgrey;
+      padding: 15px 0;
+      font-size: 20px;
+      align-items: center;
+      justify-content: space-between;
+      }
+      .product_item span:last-child {
+        width: 8%;
+      }
+  
+      .image_container {
+        width: 25%;
+      }
+      .product_img_list{
+          width: 100%;
+          height: 190px;
+        }
+    
+        .name, .category, .price, .remove_button, .update_button {
+        width: 15%;
+      }
+      .remove_button, .update_button {
+        width: 100;
+        text-align: center;
+        cursor: pointer;
+      }
+  .orderItems{
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

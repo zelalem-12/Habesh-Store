@@ -1,0 +1,126 @@
+.product_detail{
+  position: relative;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+  }
+  .back_to_results{
+    padding: 1rem;
+  }
+  .back_to_results * {
+
+    font-size: 2rem;
+    color: #07d5e4;
+  }
+  .details_image > img {
+    max-width: 55rem;
+  }
+  .details_image {
+    flex: 2 1 20rem;
+  }
+  .details_info {
+    margin-left: 2rem;
+    flex: 1 1 10rem;
+  }
+  .details_actions {
+    flex: 1 1 10rem;
+  
+    border: 1px #e0e0e0 solid;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .details_info > ul,
+  .details_actions > ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .details_info > ul > li,
+  .details_actions > ul > li {
+    margin-bottom: 1.5rem;
+  }
+  
+  .price {
+    color: #c04000;
+    font-size: 2rem;
+  }
+  .details_info > ul > li > ul > li {
+    list-style-type: disc;
+    margin-top: 0.5rem;
+  }
+  .content_margined{
+    margin: 1rem;
+  }
+  .review{
+    list-style-type: none;
+    padding: 0;
+  }
+  .review li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+  /* Rating */
+.rating_container {
+  display: flex;
+  align-items: center;
+}
+.rating_container > div:last-child{
+  margin-top: .5rem;
+  margin-left: .5rem;
+}
+.rating{
+  margin: .5rem 0;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  font-size: 2.5rem;
+  color: #c0c0c0;
+  line-height: 2rem;
+}
+.rating > span.active:before{
+   content: "\2605";
+   position: absolute;
+   color:#F0C000
+} 
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  width: 33rem;
+  padding: 2rem;
+  list-style-type: none;
+}
+.form_container > li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.form_container input, .form_container textarea,
+.form_container select, .details_actions select
+  {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px #c0c0c0 solid;
+} 
+.path{
+  position: absolute;
+  left: 0.3rem;
+  top: -2.8rem;
+  text-transform: lowercase;
+  font-family: monospace;
+  font-style: italic;
+}
+.auth_redirect *{
+  font-size: 2rem;
+  color: #07d5e4;
+  text-transform: lowercase;
+}

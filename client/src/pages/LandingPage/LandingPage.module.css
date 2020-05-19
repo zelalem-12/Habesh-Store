@@ -1,0 +1,34 @@
+
+@media(min-width: 768px){
+    .landingPage{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+    .products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+    }
+}
+.landingPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+.path{
+    position: absolute;
+    left: -2.5rem;
+    top: -2.8rem;
+    text-transform: lowercase;
+    font-family: monospace;
+    font-style: italic;
+  }

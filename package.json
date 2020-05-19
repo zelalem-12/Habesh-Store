@@ -1,0 +1,31 @@
+{
+  "name": "shopping-online",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Zelalem Antigegn",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "express-fileupload": "^1.1.7-alpha.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.10",
+    "mui-datatables": "^2.14.0",
+    "nodemailer": "^6.4.6",
+    "nodemon": "^2.0.3"
+  },
+  "scripts": {
+    "start": "node app.js",
+     "client": "cd client && yarn start",
+    "server": "nodemon app.js",
+    "heroku-postbuild": "cd client && yarn && yarn build"
+  },
+  "engines": {
+    "node": "12.9.1"
+  } 
+}

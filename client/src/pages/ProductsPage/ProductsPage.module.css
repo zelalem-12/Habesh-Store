@@ -1,0 +1,137 @@
+.content_margined{
+    margin: 1rem;
+  }
+  .content > h1 {
+    margin-left: 2rem;
+  }
+  .products_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -1rem;
+  }
+  .modal { 
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0; 
+    right: 0; 
+    background-color: #ffffff; 
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form_container {
+    display: flex;
+    flex-direction: column;
+    border: 1px #c0c0c0 solid;
+    border-radius: 0.5rem;
+    width: 33rem;
+    padding: 2rem;
+    list-style-type: none;
+  }
+  .form_container > li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  
+  .form_container input, .form_container textarea,
+  .form_container select, .details_actions select
+    {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px #c0c0c0 solid;
+  } 
+  .form_error {
+    flex: 1;
+    background-color: #f04040;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  .empty_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+
+  /* =============================================== */
+  .product_header {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgrey;
+  }
+    .header_block {
+      text-transform: capitalize;
+      width: 15%;
+      font-weight: 900;
+    }
+    .header_block:last-child {
+      width: 8%;
+    }
+      .product_item {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        border-bottom: 1px solid darkgrey;
+        padding: 15px 0;
+        font-size: 20px;
+        align-items: center;
+        }
+        .image_container {
+          width: 25%;
+        }
+        .product_img_list{
+            width: 100%;
+            height: 190px;
+          }
+      
+          .name, .category, .price, .remove_button, .update_button {
+          width: 15%;
+        }
+        .remove_button, .update_button {
+          width: 100;
+          text-align: center;
+          cursor: pointer;
+        }
+      
+        .createProduct{
+          margin-top: -1.5rem;
+          width: 80%;
+          margin: 0 auto;
+          padding: 0.1rem 1.5rem;
+        }
+        .form{
+          margin-bottom: 10px;
+        } 
+        
+        .span{
+          font-size: 200%;
+          text-transform: capitalize;
+          font-weight: 800;
+          text-align: end;
+        }
+        .back{  
+          font-size: 150%;
+         color: #09d6fa;
+         display: flex;
+         justify-content: end;
+        }
+        .creatback{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .custom_button{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }

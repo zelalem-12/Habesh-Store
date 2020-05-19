@@ -1,0 +1,13 @@
+.contact_us{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+.heading{
+  font-size: 2rem;
+}
+  .buttons {
+    display: flex;
+    justify-content: center;
+    }

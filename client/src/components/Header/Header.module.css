@@ -1,0 +1,128 @@
+.Header{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding:0 2rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 3.0rem;
+}
+
+.Header * {
+    padding: 0 0.1rem !important;
+}
+
+.basic_nav{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    font-size: 1.2rem;
+    text-transform: lowercase;
+}
+
+.basic_nav * {
+    color: red;
+    
+} 
+.login::after {
+    padding-left: 0.1rem;
+    content: '|';
+    font-size: 1.8rem;
+    color: black;
+}
+.main_nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+.main_nav * {
+    text-transform: capitalize;
+    margin: 0 0.5rem;
+}
+.basic_nav> *:hover, .main_nav > *:hover, .product_category_nav > *:hover{
+    color: rgb(7, 213, 228);
+}
+.product_category_nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 0.1rem ;
+}
+.product_category_nav *{
+   margin: 0 1.5rem;
+}
+.logo{
+    margin-right: auto;
+    text-transform: uppercase;
+}
+.covid_19:hover{
+    color: red;
+}
+
+@media screen and (max-width: 768px){
+
+    .Header{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding:0 2rem;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        margin-bottom: 3.0rem;
+    }
+    .basic_nav{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 1.2rem;
+        text-transform: lowercase;
+    }
+    .main_nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .main_nav * {
+        text-transform: capitalize;
+        margin: 0 0.5rem;
+    }
+    .basic_nav> *:hover, .main_nav > *:hover, .product_category_nav > *:hover{
+        color: rgb(7, 213, 228);
+    }
+    .product_category_nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        margin-bottom: 0.1rem ;
+    }
+    .product_category_nav *{
+       margin: 0 0.3rem;
+    }
+    .covid_19:hover{
+        color: red;
+    }
+
+    .Header *{
+        color: #000000;
+    }
+    .main_nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 2rem;
+    }
+    .main_nav *{
+        flex:  1 1 0;
+        margin: 0.3rem auto;
+    }
+    .basic_nav * {
+        color: red;
+    }
+    
+
+}

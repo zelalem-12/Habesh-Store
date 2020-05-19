@@ -1,0 +1,43 @@
+  .signIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .form{
+    margin-bottom: 25px;
+  } 
+  .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      }
+
+      .span{
+        font-size: 200%;
+        text-transform: capitalize;
+        font-weight: 800;
+      }
+      
+      .errorBox, .loadingBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .new_user{
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-around;
+      }
+      .new_user a{
+        color: #07d5e4;
+        padding-left: 8rem;
+      }
+
+      @media screen and (max-width: 768px){
+        .new_user a{
+          padding-left: 4rem;
+        }
+      }
