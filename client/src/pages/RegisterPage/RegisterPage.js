@@ -33,7 +33,7 @@ const RegisterPage = props => {
 
   useEffect(() => {
     if (success) {
-      props.history.push('/auth');
+      props.history.push('/login');
     }
     return () => {
       //
