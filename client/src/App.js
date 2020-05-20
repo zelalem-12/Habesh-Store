@@ -10,7 +10,7 @@ import { Header, PrivateRoute, AdminRoute} from './components';
 // Import pages
  import {LoginPage, RegisterPage, LandingPage, ContactPage, DefaultPage,
   ShippingPage, PaymentPage, PlaceOrder, ProfilePage, CheckoutPage,
-   ProductDetailPage, OrderDetailPage, ProductsPage, ContactsPage }from './pages';
+   ProductDetailPage, OrderDetailPage, ProductsPage, ContactsPage, OrdersPage}from './pages';
 
 
 
@@ -38,7 +38,8 @@ const App = () => {
          <PrivateRoute exact path = '/order' component = { OrderDetailPage } />
          <PrivateRoute path = '/profile' component = { ProfilePage } />
          <AdminRoute path = '/products' component = { ProductsPage }/>
-         <AdminRoute path = '/contact-messages' component = {ContactsPage} />
+         <AdminRoute path = '/orders' component = {OrdersPage} />
+         <AdminRoute path = '/contacts' component = {ContactsPage} />
          <Route path = '/checkout/:id' component = { CheckoutPage } />
          <Route exact path = '/checkout' component = { CheckoutPage } />
          <Route path = '/contact-us' component = {ContactPage} />

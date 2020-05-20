@@ -12,4 +12,6 @@ export { default as ProductDetailPage } from './ProductDetailPage/ProductDetailP
 export { default as OrderDetailPage} from './OrderDetailPage/OrderDetailPage';
 export { default as  ProductsPage } from './ProductsPage/ProductsPage';
 export {default as ContactsPage} from './GetVisitorContactMessage/GetVisitorContactMessage';
+export { default as OrdersPage} from './OrdersPage/OrdersPage';
+
 
