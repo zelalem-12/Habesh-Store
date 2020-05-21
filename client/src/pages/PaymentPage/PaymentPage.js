@@ -1,6 +1,5 @@
 import React, { useState} from 'react';
 import { useDispatch } from 'react-redux';
-import  { Checkbox } from '@material-ui/core';
 
 import { addPayment } from '../../actions/cart-actions';
 import { CustomButton, CheckoutSteps} from '../../components';

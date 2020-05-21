@@ -20,7 +20,7 @@ const Header = props => {
       return () => {
         //
       };
-    }, []);
+    }, [dispatch]);
     const { loading, categories, error } = categoryList;
   
   const cart = useSelector(state => state.cart);

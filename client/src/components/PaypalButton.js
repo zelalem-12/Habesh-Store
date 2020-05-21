@@ -32,7 +32,7 @@ const PaypalButton = (props) => {
     ) {
       props.onButtonReady();
     }
-  }, []);
+  }, [props]);
 
 
   const createOrder = (data, actions) => actions.order.create({

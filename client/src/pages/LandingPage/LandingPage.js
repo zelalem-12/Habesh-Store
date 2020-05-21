@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from 'react';
+import React, { useEffect }from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {listProducts } from '../../actions/product-actions';
@@ -10,7 +10,7 @@ import {
 import styles from  './LandingPage.module.css';
 
 const LandingPage = props => {
-  const [search, setSearch ] = useState('');
+  const search = '';
 
   const category = props.match.params.id ? props.match.params.id : '';
 
@@ -22,7 +22,7 @@ const LandingPage = props => {
     return () => {
       //
     };
-  }, [category]);
+  }, [category, search, dispatch]);
 
       const { loading, products, error } = productList;
         return(

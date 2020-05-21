@@ -22,7 +22,7 @@ const CheckoutPage = props =>{
       return () => {
         //
       };
-    }, []);
+    }, [props, dispatch]);
 
         return(
             <div className= {styles.checkout_container}>

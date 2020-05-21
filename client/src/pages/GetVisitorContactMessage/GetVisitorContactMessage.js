@@ -12,7 +12,7 @@ const GetVisitorContactMessage = props => {
         return () => {
           //
         };
-      }, []);
+      }, [dispatch]);
 
       const contactMessages = useSelector( state => state.contactMessages);
 

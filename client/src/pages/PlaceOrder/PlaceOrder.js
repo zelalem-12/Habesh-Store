@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import {Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { CheckoutSteps, CustomButton} from '../../components';
 import { createOrder } from '../../actions/order-actions';
@@ -13,7 +12,7 @@ const  PlaceOrder = props =>{
   const orderCreate = useSelector((state) => state.orderCreate);
 
   const { cartItems, shipping, payment } = cart;
-  const { loading, success, data: order, error } = orderCreate;
+  const {  success, data: order, } = orderCreate;
 
   !shipping && props.history.push('/shipping');
   !payment && props.history.push('/payment');
@@ -31,7 +30,7 @@ const  PlaceOrder = props =>{
     return () => {
       //
     };
-  }, [success]);
+  }, [success, props, dispatch, order]);
 
         return (
     <div>

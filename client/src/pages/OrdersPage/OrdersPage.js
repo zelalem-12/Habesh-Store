@@ -12,11 +12,11 @@ const OrdersPage = props => {
   };
 
   const orderList = useSelector((state) => state.orderList);
-  const orderUpdate = useSelector((state) => state.orderUpdate);
-  const orderDelete = useSelector((state) => state.orderDelete);
+  //const orderUpdate = useSelector((state) => state.orderUpdate);
+  //const orderDelete = useSelector((state) => state.orderDelete);
 
   const { loading, orders, error } = orderList;
-  const { loading: loadingDelete, success: successDelete, error: errorDelete } = orderDelete;
+ // const { loading: loadingDelete, success: successDelete, error: errorDelete } = orderDelete;
   console.log('dispatch List orders');
   dispatch(listOrders());
   useEffect(() => {

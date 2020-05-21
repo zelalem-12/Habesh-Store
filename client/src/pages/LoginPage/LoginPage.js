@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 
@@ -21,14 +21,7 @@ const LoginPage = props => {
   const loggedUser = useSelector(state => state.loggedUser);
   const {loading, user, error} = loggedUser;
   const redirect = props.location.search ? props.location.search.split('=')[1] : '/';
-  useEffect(() => {
-    if (user) {
-      props.history.push(redirect);
-    }
-    return () => {
-      //
-    };
-  }, [user]);
+  user && props.history.push(redirect);
 
     return (
       <div className={styles.signIn}>

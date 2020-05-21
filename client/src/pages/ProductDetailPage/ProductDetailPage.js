@@ -26,7 +26,7 @@ const ProductDetailPage = props => {
 
 
   const productReviewAdd = useSelector((state) => state.productReviewAdd);
-  const { loading: loadingSaveReview, error: errorSaveReview, success: successSaveReview } = productReviewAdd;
+  const { success: successSaveReview } = productReviewAdd;
   useEffect(() => {
     if (successSaveReview) {
       setComment('');
@@ -39,7 +39,7 @@ const ProductDetailPage = props => {
     return () => {
       //
     };
-  }, [successSaveReview]);
+  }, [successSaveReview, dispatch, props]);
   const submitHandler = e => {
     e.preventDefault();
     dispatch(addProductReview(props.match.params.id, { comment, rating }));

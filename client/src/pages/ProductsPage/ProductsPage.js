@@ -55,19 +55,17 @@ const  ProductsPage = props => {
   const productDelete = useSelector(state => state.productDelete);
 
   const { loading, products, error } = productList;
-  const { loading: loadingSave, success: successSave, error: errorSave } = productAdd;
+  const { success: successSave, error: errorSave } = productAdd;
   const { loading: loadingDelete, delete: successDelete, error: errorDelete } = productDelete;
 
-  useEffect(() => {
-    if (successSave) {
-      setModalVisible(false);
-    }
+  successSave && setModalVisible(false);
 
+  useEffect(() => {
     dispatch(listProducts());
     return () => {
       //
     };
-  }, [successSave, successDelete]);
+  }, [dispatch]);
   
   return loading
     ? <LoadingBox /> : error ? <ErrorBox message={error} /> : (

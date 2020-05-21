@@ -13,9 +13,9 @@ const OrderDetailPage = props =>{
   const orderDetails = useSelector((state) => state.orderDetails);
   const { loading, error, order } = orderDetails;
   const orderPay = useSelector((state) => state.orderPay);
-  const { loading: loadingPay, error: errorPay, success: successPay } = orderPay;
-  const orderDeliver = useSelector((state) => state.orderDeliver);
-  const { loading: loadingDeliver, error: errorDeliver, success: successDeliver } = orderDeliver;
+  const { success: successPay } = orderPay;
+  //const orderDeliver = useSelector((state) => state.orderDeliver);
+  // const { loading: loadingDeliver, error: errorDeliver, success: successDeliver } = orderDeliver;
     
     const redirect = props.location.search ? props.location.search.split('=')[1] : '/profile';
     useEffect(() => {
@@ -28,7 +28,7 @@ const OrderDetailPage = props =>{
       return () => {
         // resource cleanup codes
       };
-    }, [dispatch, successPay]);
+    }, [dispatch, successPay, props]);
 
     const handleSuccessPayment = (paymentResult) => {
       dispatch(payOrder(order, paymentResult));

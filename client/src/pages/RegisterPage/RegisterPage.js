@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {LoadingBox, ErrorBox, FormInput, CustomButton} from '../../components';
@@ -30,16 +30,7 @@ const RegisterPage = props => {
     setConfirmPassword('');
     props.switchHandler();
   };
-
-  useEffect(() => {
-    if (success) {
-      props.history.push('/login');
-    }
-    return () => {
-      //
-    };
-  }, [success]);
-
+  success &&  props.history.push('/login');
     return (
       <div className={styles.sign_up}>
         <span className={styles.span}>Create Account</span>

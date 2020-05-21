@@ -19,7 +19,7 @@ const ProfilePage = props => {
 
   const loggedUser = useSelector(state => state.loggedUser);
   const userUpdate = useSelector((state) => state.userUpdate);
-  const { loading, error, success, updatedUser} = userUpdate;
+  const { loading, error, success} = userUpdate;
   const { user } = loggedUser;
   const myOrderList = useSelector((state) => state.myOrderList);
   const { loading: loadingOrders, orders, error: errorOrders } = myOrderList;
@@ -47,7 +47,7 @@ const handleSubmit = event => {
       return () => {
         // Clean up code 
       };
-    }, [user]);
+    }, [user, dispath]);
         return (
             <div className= {styles.profile}>
             <div className= { styles.profile_section}>
