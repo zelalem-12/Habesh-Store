@@ -14,9 +14,8 @@ import { getErrorMessage } from '../utils';
 const createOrder = data => async (dispatch, getState) => {
     dispatch({type: ORDER_CREATE_REQUEST});
     try{
-        console.log(data);
         const { loggedUser: {user: { token }}} = getState();
-    const { data: {data: order }} = await axios.post('/api/orders', data, {
+        const { data: {data: order }} = await axios.post('/api/orders', data, {
             headers: {
               Authorization: `Bearer ${token}`
             }
@@ -85,15 +84,13 @@ const deliverOrder = order => async (dispatch, getState) => {
 const listOrders = () => async (dispatch, getState) => {
     dispatch({type: ORDER_LIST_REQUEST});
     try{
-        console.log(' Before calling api order data')
         const { loggedUser: { user: {token}}} = getState();
         const result = await axios.get('/api/orders', {
              headers: { 
                  Authorization:`Bearer ${token}`
                 }
             });
-            console.log(' After calling api order data')
-            console.log(result.data);
+
         dispatch({type: ORDER_LIST_SUCCESS, payload: result.data});
     } catch(error){
         dispatch({type: ORDER_LIST_FAIL, payload: getErrorMessage(error)});

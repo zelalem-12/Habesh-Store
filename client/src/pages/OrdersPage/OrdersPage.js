@@ -10,27 +10,26 @@ const OrdersPage = props => {
   const deleteHandler = (order) => {
     dispatch(deleteOrder(order));
   };
-
   const orderList = useSelector((state) => state.orderList);
-  //const orderUpdate = useSelector((state) => state.orderUpdate);
-  //const orderDelete = useSelector((state) => state.orderDelete);
+  const orderUpdate = useSelector((state) => state.orderUpdate);
+  const orderDelete = useSelector((state) => state.orderDelete);
 
   const { loading, orders, error } = orderList;
- // const { loading: loadingDelete, success: successDelete, error: errorDelete } = orderDelete;
-  console.log('dispatch List orders');
+ const { loading: loadingDelete, success: successDelete, error: errorDelete } = orderDelete;
+
+ useEffect(() => {
   dispatch(listOrders());
-  useEffect(() => {
-    console.log('dispatch List orders');
-    dispatch(listOrders());
-    return () => {
-      //
-    };
-  });
-  return loading
-    ? <LoadingBox /> : error ? <ErrorBox message={error} /> : (
-      <div className="content content-margined">
-        <h3>Orders</h3>
-        {orders.length === 0 ? (
+  return () => {
+    //
+  };
+},[dispatch]);
+return(
+  loading
+    ? <LoadingBox /> : error ? <ErrorBox message={error} />
+    : (
+    <div className="content content-margined">
+      <h3>Orders</h3>
+      {orders.length === 0 ? (
           <div className="empty-list">
             There is no orders.
           </div>
@@ -43,10 +42,10 @@ const OrdersPage = props => {
                     ID
                   </th>
                   <th>
-                    USER
+                    CUSTOMER
                   </th>
                   <th>
-                    DATE
+                   ORDER DATE
                   </th>
                   <th>
                     TOTAL
@@ -69,10 +68,13 @@ const OrdersPage = props => {
                       {order._id}
                     </td>
                     <td>
-                      {order.user.name}
+                      {order.user.first_name}
                     </td>
                     <td>
-                      {order.createdAt}
+                      {
+                        `
+                        at ${new Date(order.createdAt).getHours()}:${new Date(order.createdAt).getMinutes()}`
+                      }
                     </td>
                     <td>
                       {order.totalPrice}
@@ -95,6 +97,8 @@ const OrdersPage = props => {
             </table>
           )}
       </div>
-    );
+)
+)
+
 }
 export default OrdersPage;
