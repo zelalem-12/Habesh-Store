@@ -29,7 +29,6 @@ router.get('/:id', asyncHandler(async (req, res) => {
   }
 }));
 router.post('/', isAuthenticated, asyncHandler(async (req, res) => {
-  console.log(req.body);
   const order = new Order({
     orderItems: req.body.cartItems,
     payment: req.body.payment,

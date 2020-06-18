@@ -4,15 +4,19 @@ import { Link } from 'react-router-dom';
 import { LoadingBox, ErrorBox} from '../../components';
 import { listOrders, deleteOrder } from '../../actions/order-actions';
 
+import styles from './OrdersPage.module.css';
+
 const OrdersPage = props => {
   const dispatch = useDispatch();
 
-  const deleteHandler = (order) => {
+  const deleteHandler = order => {
     dispatch(deleteOrder(order));
   };
-  const orderList = useSelector((state) => state.orderList);
-  const orderUpdate = useSelector((state) => state.orderUpdate);
-  const orderDelete = useSelector((state) => state.orderDelete);
+  const orderList = useSelector(state => state.orderList);
+  const orderUpdate = useSelector(state => state.orderUpdate);
+  const orderDelete = useSelector(state => state.orderDelete);
+  const data  = orderDelete.orders;
+!!data && window.alert(data.message);
 
   const { loading, orders, error } = orderList;
  const { loading: loadingDelete, success: successDelete, error: errorDelete } = orderDelete;
@@ -27,16 +31,16 @@ return(
   loading
     ? <LoadingBox /> : error ? <ErrorBox message={error} />
     : (
-    <div className="content content-margined">
+    <div className={`${styles.content} content-margined`}>
       <h3>Orders</h3>
       {orders.length === 0 ? (
-          <div className="empty-list">
+          <div className={`${styles.empty_list}`}>
             There is no orders.
           </div>
         )
           : (
-            <table>
-              <thead>
+            <table className ={`${styles.table}`}>
+              <thead className ={`${styles.table_head}`}>
                 <tr>
                   <th>
                     ID
@@ -61,19 +65,19 @@ return(
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className ={`${styles.table_body}`}>
                 {orders.map((order) => (
                   <tr key={order._id}>
                     <td>
                       {order._id}
                     </td>
                     <td>
-                      {order.user.first_name}
+                      {[order.user.first_name, order.user.last_name].join(' ')}
                     </td>
                     <td>
                       {
                         `
-                        at ${new Date(order.createdAt).getHours()}:${new Date(order.createdAt).getMinutes()}`
+                        ${new Date(order.createdAt).toLocaleDateString()} at ${new Date(order.createdAt).toLocaleTimeString()}`
                       }
                     </td>
                     <td>

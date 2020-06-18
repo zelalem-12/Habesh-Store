@@ -56,7 +56,7 @@ const orderDeleteReducer= (state = {}, action) => {
       case ORDER_DELETE_REQUEST:
         return { loading: true };
       case ORDER_DELETE_SUCCESS:
-        return { loading: false, success: true, orders: action.payload };
+        return { loading: false, orders: action.payload };
       case ORDER_DELETE_FAIL:
         return { loading: false, error: action.payload };
       default: return state;
